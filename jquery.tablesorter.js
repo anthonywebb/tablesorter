@@ -837,6 +837,10 @@
                     if ($.metadata && ($(this).metadata() && $(this).metadata().sortlist)) {
                         config.sortList = $(this).metadata().sortlist;
                     }
+                    // you can also specify sortlist as a data param by specifying as a parm of the tabl something like data-sortlist="[1,0]"
+                    if($this.data().sortlist){
+                        config.sortList = $this.data().sortlist;    
+                    }
                     // if user has supplied a sort list to constructor.
                     if (config.sortList.length > 0) {
                         $this.trigger("sorton", [config.sortList]);
